@@ -35,7 +35,7 @@ def detect_objects(image_np, sess, detect_object_util):
 
 
 MODEL_NAME = 'ssd_mobilenet_v1_coco_11_06_2017'
-PATH_TO_MODEL = os.path.join('/Users/gbala/tf/TensorFlow', MODEL_NAME, 'frozen_inference_graph.pb')
+PATH_TO_MODEL = os.path.join('./', MODEL_NAME, 'frozen_inference_graph.pb')
 
 #loaidng the coco data set
 PATH_TO_DATA_SET = os.path.join('/Users/gbala/Library/Python/2.7/lib/python/site-packages/tensorflow/models/', 'object_detection', 'data', 'mscoco_label_map.pbtxt')
@@ -44,7 +44,7 @@ labels = label.load_labelmap(PATH_TO_DATA_SET)
 categories = label.convert_label_map_to_categories(labels, max_num_classes=20, use_display_name=True)
 category_index = label.create_category_index(categories)
 
-image_path = '/Users/gbala/tf/TensorFlow/image3.jpg'
+image_path = './image3.jpg'
 
 image = Image.open(image_path)
 image_array = load_image_into_numpy_array(image)
